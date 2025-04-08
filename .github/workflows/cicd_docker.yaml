@@ -9,7 +9,65 @@ on:
 
 # Liste des jobs
 jobs:
-  build:  # Nom du job
+  tests_frontend: 
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+    - name: checkout le code
+      uses: actions/checkout@v4
+
+    - name: installer Node.js
+      uses: actions/setup-node@v3 
+      with:
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+
+    - name: installer les dépendances
+      run: npm ci --prefer-offline
+
+    - name: vérifie les vulnérabilités
+      run: npm audit --audit-level=moderate
+    - name: vérifie le code
+      run: npm run lint
+
+  tests_backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: node-api
+    steps:
+    - name: checkout le code
+      uses: actions/checkout@v4
+
+    - name: installer Node.js
+      uses: actions/setup-node@v3 
+      with:
+        cache: 'npm'
+        cache-dependency-path: node-api/package-lock.json
+
+    - name: installer les dépendances
+      run: npm ci --prefer-offline
+          
+    - name: exécute les tests
+      run: npm run test:ci
+          
+    - name: vérifie le code
+      run: npm run lint
+          
+    - name: vérifie les vulnérabilités
+      run: |
+        cd node-api
+        npm audit --audit-level=moderate
+
+    - name: Upload du rapport de couverture sur Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  build-frontend-and-node-api:  # Nom du job
+    needs: [tests_frontend, tests_backend]
     runs-on: ubuntu-latest  # S'exécute sur la dernière version d'Ubuntu
     permissions:  # Permissions nécessaires
       packages: write  # Autorisation d'écrire aux packages
