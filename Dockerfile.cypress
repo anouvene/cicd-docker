@@ -1,11 +1,15 @@
+# Étape 1 : Utiliser l'image officielle Cypress avec Chrome
 FROM cypress/included
 
-WORKDIR /e2e
+# Définir le dossier de travail
+WORKDIR /frontend
 
+# Copier les fichiers de configuration et installer les dépendances
 COPY ./frontend/package*.json ./
-RUN npm install
+RUN npm ci
 
-#ENV NODE_PATH=/e2e/node_modules
+# Copier tout le projet frontend
 COPY ./frontend .
 
+# Spécifier les variables d'environnement
 ENV RUN_ENV=docker

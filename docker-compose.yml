@@ -11,20 +11,36 @@ services:
       
   # cypress:
   #   image: cypress/included
+  #   working_dir: /frontend
+  #   volumes:
+  #     - ./frontend:/frontend
+  #   environment:
+  #     - RUN_ENV=docker
+  #   entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C cypress.config.cjs
+  #   depends_on:
+  #     - frontend
+  #     - node-api
+
+  # cypress:
+  #   image: cypress/included
   #   working_dir: /e2e
   #   volumes:
   #     - ./frontend:/e2e
   #   environment:
   #     - RUN_ENV=docker
-  #   entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C --config-file cypress.config.cjs
+  #   entrypoint: >
+  #     sh -c "cypress run --config-file cypress.config.cjs --headless --browser chrome"
   #   depends_on:
   #     - frontend
   #     - node-api
+  
   cypress:
-    image: cypress/included
-    working_dir: /e2e
+    build:
+      context: .
+      dockerfile: Dockerfile.cypress
+    working_dir: /frontend
     volumes:
-      - ./frontend:/e2e
+      - ./frontend:/frontend
     environment:
       - RUN_ENV=docker
     entrypoint: >
@@ -32,18 +48,3 @@ services:
     depends_on:
       - frontend
       - node-api
-  
-  # cypress:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.cypress
-  #   working_dir: /e2e
-  #   volumes:
-  #     - ./frontend:/e2e
-  #   environment:
-  #     - RUN_ENV=docker
-  #   entrypoint: >
-  #     sh -c "cypress run --headless --browser chrome --env RUN_ENV=docker"
-  #   depends_on:
-  #     - frontend
-  #     - node-api
