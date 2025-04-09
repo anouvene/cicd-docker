@@ -16,7 +16,7 @@ services:
       - ./frontend:/e2e
     environment:
       - RUN_ENV=docker
-    entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C --config-file cypress.config.js
+    entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C --config-file cypress.config.cjs
     depends_on:
       - frontend
       - node-api
