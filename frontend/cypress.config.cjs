@@ -39,7 +39,8 @@ module.exports = defineConfig({
       //   codeCoverage(on, config);
       // }
 
-      require('@cypress/code-coverage/task')(on, config);
+      codeCoverage(on, config);
+      //require('@cypress/code-coverage/task')(on, config);
       return config;
     },
   },
