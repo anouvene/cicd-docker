@@ -40,7 +40,7 @@ services:
       dockerfile: Dockerfile.cypress
     working_dir: /frontend
     volumes:
-      - ./frontend
+      - ./frontend: /
     environment:
       - RUN_ENV=docker
     entrypoint: >
