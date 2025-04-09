@@ -19,17 +19,17 @@ services:
   #     - frontend
   #     - node-api
   
-cypress:
-  build:
-    context: .
-    dockerfile: Dockerfile.cypress
-  working_dir: /e2e
-  volumes:
-    - ./frontend:/e2e
-  environment:
-    - RUN_ENV=docker
-  entrypoint: >
-    sh -c "cypress run --headless --browser chrome --env RUN_ENV=docker"
-  depends_on:
-    - frontend
-    - node-api
+  cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile.cypress
+    working_dir: /e2e
+    volumes:
+      - ./frontend:/e2e
+    environment:
+      - RUN_ENV=docker
+    entrypoint: >
+      sh -c "cypress run --headless --browser chrome --env RUN_ENV=docker"
+    depends_on:
+      - frontend
+      - node-api
