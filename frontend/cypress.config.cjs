@@ -35,9 +35,11 @@ module.exports = defineConfig({
     },
     setupNodeEvents(on, config) {
       // only enable codeCoverage for local
-      if (runEnv === 'local') {
-        codeCoverage(on, config);
-      }
+      // if (runEnv === 'local') {
+      //   codeCoverage(on, config);
+      // }
+
+      require('@cypress/code-coverage/task')(on, config);
       return config;
     },
   },
