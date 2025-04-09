@@ -5,6 +5,7 @@ WORKDIR /e2e
 COPY ./frontend/package*.json ./
 RUN npm install
 
+#ENV NODE_PATH=/e2e/node_modules
 COPY ./frontend .
 
 ENV RUN_ENV=docker

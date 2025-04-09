@@ -29,7 +29,6 @@ const selectedConfig = configByEnv[runEnv] || configByEnv.local;
 
 function setupNodeEvents(on, config) {
   try {
-    const codeCoverage = require('@cypress/code-coverage/task');
     codeCoverage(on, config);
   } catch (err) {
     console.warn('⚠️ Code coverage not available, skipping setup.');
