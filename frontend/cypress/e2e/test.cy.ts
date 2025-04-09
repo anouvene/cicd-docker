@@ -1,15 +1,14 @@
 describe('Vue 3 App', () => {
   
   const runEnv = Cypress.env('RUN_DEV');
+  
   if (runEnv !== 'docker') {
     before(() => {
-      
       cy.request({
         url: 'http://localhost:3000/api/user/current',
         retryOnStatusCodeFailure: true,
         retryOnNetworkFailure: true
       });
-
     });
   }
 

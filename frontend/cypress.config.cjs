@@ -27,21 +27,19 @@ const configByEnv = {
 
 const selectedConfig = configByEnv[runEnv] || configByEnv.local;
 
+function setupNodeEvents(on, config) {
+  try {
+    const codeCoverage = require('@cypress/code-coverage/task');
+    codeCoverage(on, config);
+  } catch (err) {
+    console.warn('⚠️ Code coverage not available, skipping setup.');
+  }
+  return config;
+}
+
 module.exports = defineConfig({
   e2e: {
     ...selectedConfig,
-    env: {
-      RUN_ENV: runEnv
-    },
-    setupNodeEvents(on, config) {
-      // only enable codeCoverage for local
-      // if (runEnv === 'local') {
-      //   codeCoverage(on, config);
-      // }
-
-      codeCoverage(on, config);
-      //require('@cypress/code-coverage/task')(on, config);
-      return config;
-    },
+    setupNodeEvents,
   },
 });
