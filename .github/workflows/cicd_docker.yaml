@@ -110,3 +110,22 @@ jobs:
           context: ./${{ matrix.path }}  # Contexte pour la construction Docker
           cache-from: type=gha  # Utilise le cache GitHub Actions
           cache-to: type=gha,mode=max  # Enregistre le cache pour les utilisations futures
+  
+  e2e:
+    needs: [build-frontend-and-node-api]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login sur GitHub Package Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Lancement des tests E2E
+        run: docker compose up --exit-code-from cypress --abort-on-container-exit
+      - name: Nettoyage
+        run: docker compose down -v --remove-orphans

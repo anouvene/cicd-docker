@@ -15,6 +15,8 @@
 Cypress.Commands.add('login', (email: string, password: string) => {
     cy.getCookie('token').then((cookie) => {
         if (!cookie) {
+            cy.clearCookies();
+            cy.clearAllSessionStorage();
             cy.session([email, password], () => {
                 cy.visit('/connexion');
                 cy.dataCy('email').type(email);

@@ -44,3 +44,15 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Docker compose Cypress E2E tests with 2 environments: local and docker
+
+### Tests E2E with Cypress in local environment and in interactive mode (Chrome browser)
+```sh
+RUN_ENV=local npm run test:e2e:dev
+```
+
+### Tests E2E with Cypress in local environment and in stateless mode (Chrome browser)
+```sh
+RUN_ENV=local npm run test:e2e
+```
