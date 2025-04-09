@@ -6,7 +6,7 @@ WORKDIR /frontend
 
 # Copier les fichiers de configuration et installer les dépendances
 COPY ./frontend/package*.json ./
-RUN npm ci
+RUN npm install
 
 # Copier tout le projet frontend
 COPY ./frontend .
