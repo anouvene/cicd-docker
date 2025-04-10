@@ -21,55 +21,19 @@ Cypress.Commands.add('dataCy', (dataValue) => {
 
 // -- Login --
 Cypress.Commands.add('login', (email: string, password: string) => {
-    cy.getCookie('token').then((cookie) => {
-        if (!cookie) {
-            cy.clearCookies();
-            cy.clearAllSessionStorage();
-            cy.session([email, password], () => {           
-                cy.visit('/connexion');
-                cy.dataCy('email', { timeout: 10000}).should('exist');
-                cy.dataCy('email').type(email);
-                cy.dataCy('password').type(password);
-                cy.contains('button', 'Connexion').click();
-            }, {
-                validate: () => {
-                    cy.visit('/profil');
-                }
-            });
+    cy.session([email, password], () => {
+        cy.visit('/connexion');
 
-            // cy.session([email, password], () => {
-            //     cy.request({
-            //         method: 'POST',
-            //         url: '/api/auth',
-            //         body: {email, password}
+        // Attend que le champ email soit bien là
+        cy.dataCy('email', { timeout: 15000 }).should('exist');
+        cy.dataCy('email').type(email);
+        cy.dataCy('password').type(password);
+        cy.contains('button', 'Connexion').click();
 
-            //     }).then(({body}) => {
-            //         console.log(body);
-            //         console.log('Token: ', window.localStorage.getItem('token'));
-            //     });
-                
-            // });
-        } 
-        
-        cy.visit('/profil');
-        
-        
+        cy.url().should('include', '/profil');
+        cy.contains('Déconnexion').should('be.visible');
     });
 });
-
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
 
 
 //export {}
