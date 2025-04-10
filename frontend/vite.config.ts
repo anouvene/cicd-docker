@@ -5,12 +5,12 @@ import istanbul from 'vite-plugin-istanbul';
 
 export default defineConfig({
   plugins: [
-    // istanbul({
-    //   include: 'src/*',
-    //   exclude: ['node_modules', 'test/'],
-    //   extension: ['.js', '.ts', '.vue'],
-    //   forceBuildInstrument: true
-    // }),
+    istanbul({
+      include: 'src/*',
+      exclude: ['node_modules', 'test/'],
+      extension: ['.js', '.ts', '.vue'],
+      forceBuildInstrument: process.env.RUN_ENV !== 'docker'
+    }),
     vue({
       template: {
         compilerOptions: {
