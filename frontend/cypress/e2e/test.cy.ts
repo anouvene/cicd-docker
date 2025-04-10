@@ -39,14 +39,15 @@ describe('Vue 3 App', () => {
 
   it('La connexion fonctionne', () => {
     cy.login('test@test.fr', 'riuehuhrfezhop');
+    
     cy.contains('Mon profil');
     cy.contains('Déconnexion');
   });
 
   it('La déconnexion fonctionne', () => {
     cy.login('test@test.fr', 'riuehuhrfezhop');
-    cy.url().should('include', '/profil');
     cy.dataCy('logout').click();
+
     cy.contains('h2', 'Connexion').should('be.visible');
   });
 });

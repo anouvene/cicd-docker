@@ -53,7 +53,7 @@ module.exports = defineConfig({
     ...(configByEnv[runEnv] || configByEnv.local),
     setupNodeEvents,
   },
-  env: {
-    CYPRESS_VERBOSE: true
-  }
+  // env: {
+  //   CYPRESS_VERBOSE: true
+  // }
 });

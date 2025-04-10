@@ -40,9 +40,18 @@ Cypress.Commands.add('login', (email: string, password: string) => {
         cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
         cy.dataCy('password').type(password);
         cy.contains('button', 'Connexion').click();
+
         cy.url().should('include', '/profil');
         cy.contains('Déconnexion').should('exist');
+      },{
+        validate() {
+          cy.document()
+            .its('cookie')
+            .should('contain', 'token')
+        }
       });
+      cy.visit('/profil');
+      cy.wait(2000);
     }
   });
 
