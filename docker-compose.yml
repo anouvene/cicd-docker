@@ -40,11 +40,11 @@ services:
       dockerfile: Dockerfile.cypress
     working_dir: /frontend
     volumes:
-      - ./frontend: .
+      - ./frontend: /frontend
     environment:
       - RUN_ENV=docker
-    entrypoint: >
-      sh -c "cypress run --config-file cypress.config.cjs --headless --browser chrome"
     depends_on:
       - frontend
       - node-api
+    entrypoint: >
+      sh -c "npx cypress run --headless --browser chrome --config-file /frontend/cypress.config.cjs"
