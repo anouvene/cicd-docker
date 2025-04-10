@@ -40,7 +40,8 @@ services:
       dockerfile: Dockerfile.cypress
     working_dir: /frontend
     volumes:
-      - ./frontend:/frontend
+      - ./frontend/cypress:/frontend/cypress
+      - ./frontend/cypress.config.cjs:/frontend/cypress.config.cjs
     environment:
       - RUN_ENV=docker
     depends_on:
