@@ -20,7 +20,7 @@ const emit = defineEmits<{
         <li class="mr-20">
           <router-link to="/profil">Mon profil</router-link>
         </li>
-        <li data-cy="'logout'" @click="emit('logout')">Déconnexion</li>
+        <li  @click="emit('logout')">Déconnexion</li>
       </template>
       <template v-else-if="isAuthenticated === false">
         <li class="mr-20">

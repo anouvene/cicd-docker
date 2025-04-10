@@ -60,8 +60,8 @@ describe('Vue 3 App', () => {
       cy.writeFile('cypress/debug/dom-before-logout.html', doc.documentElement.outerHTML);
     });
   
-    // Attendre le logout s’il est rendu avec un délai
-    cy.dataCy('logout', { timeout: 15000 }).should('be.visible').click();
+    // Attendre la page s’il est rendu avec un délai
+    cy.contains('Déconnexion', { timeout: 15000 }).should('be.visible').click();
   
     // Vérifier qu'on revient à la page de connexion
     cy.contains('h2', 'Connexion').should('be.visible');

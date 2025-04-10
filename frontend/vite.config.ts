@@ -9,7 +9,7 @@ export default defineConfig({
       include: 'src/*',
       exclude: ['node_modules', 'test/'],
       extension: ['.js', '.ts', '.vue'],
-      forceBuildInstrument: false
+      forceBuildInstrument: true
     }),
     vue({
       template: {
