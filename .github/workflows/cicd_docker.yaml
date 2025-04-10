@@ -127,19 +127,20 @@ jobs:
 
       - name: Lancement des tests E2E
         run: docker compose up --exit-code-from cypress --abort-on-container-exit
+        
       - name: Nettoyage
         run: docker compose down -v --remove-orphans
 
       - name: Upload des captures d’écran (si erreur)
         if: failure()
-        uses: actions/upload-artifact@v3.1.3
+        uses: actions/upload-artifact@v3
         with:
           name: cypress-screenshots
           path: frontend/cypress/screenshots
 
       - name: Upload des fichiers DOM HTML (si erreur)
         if: failure()
-        uses: actions/upload-artifact@v3.1.3
+        uses: actions/upload-artifact@v3
         with:
           name: dom-snapshots
           path: frontend/cypress/debug/
