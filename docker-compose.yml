@@ -8,31 +8,6 @@ services:
     image: ghcr.io/dymacicd/cicd-projet2/frontend:latest
     ports:
       - '80:80'
-      
-  # cypress:
-  #   image: cypress/included
-  #   working_dir: /frontend
-  #   volumes:
-  #     - ./frontend:/frontend
-  #   environment:
-  #     - RUN_ENV=docker
-  #   entrypoint: cypress run --config baseUrl=http://frontend --headless --browser chrome -C cypress.config.cjs
-  #   depends_on:
-  #     - frontend
-  #     - node-api
-
-  # cypress:
-  #   image: cypress/included
-  #   working_dir: /e2e
-  #   volumes:
-  #     - ./frontend:/e2e
-  #   environment:
-  #     - RUN_ENV=docker
-  #   entrypoint: >
-  #     sh -c "cypress run --config-file cypress.config.cjs --headless --browser chrome"
-  #   depends_on:
-  #     - frontend
-  #     - node-api
   
   cypress:
     build:
