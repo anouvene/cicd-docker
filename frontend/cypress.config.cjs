@@ -5,6 +5,8 @@ const codeCoverage = require('@cypress/code-coverage/task');
 const runEnv = process.env.RUN_ENV || 'local';
 console.log(`🔧 Running Cypress in '${runEnv}' environment.`);
 
+const isDocker = process.env.RUN_ENV === 'docker';
+
 const configByEnv = {
   local: {
     supportFile: 'cypress/support/e2e.ts',
@@ -17,7 +19,7 @@ const configByEnv = {
     video: true,
   },
   docker: {
-    baseUrl: 'http://frontend',
+    baseUrl: (Cypress.env('RUN_ENV') === 'docker') ? 'http://frontend' : 'http://localhost:3000',
     supportFile: 'cypress/support/e2e.ts',// you can remove or adjust this
     specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
     video: false,
