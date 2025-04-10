@@ -24,4 +24,4 @@ services:
       - frontend
       - node-api
     entrypoint: >
-      sh -c "RUN_ENV=$RUN_ENV && npx cypress run --headless --browser chrome --config-file /frontend/cypress.config.cjs"
+      sh -c "npx cypress run --headless --browser chrome --config-file /frontend/cypress.config.cjs"
