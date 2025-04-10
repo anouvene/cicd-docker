@@ -70,7 +70,7 @@ describe('Vue 3 App', () => {
       cy.url().should('include', '/profil');
 
       cy.contains('Déconnexion').click();
-      cy.dataCy('logout').click();
+      //cy.dataCy('logout').click();
       cy.contains('h2', 'Connexion').should('be.visible');
     });
   //}); 
