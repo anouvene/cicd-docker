@@ -63,7 +63,7 @@ describe('Vue 3 App', () => {
       // cy.login('test@test.fr', 'riuehuhrfezhop');
       // cy.url().should('include', '/profil');
 
-      y.contains('Déconnexion').click();
+      cy.contains('Déconnexion').click();
       cy.dataCy('logout').click();
       cy.contains('h2', 'Connexion').should('be.visible');
     });
