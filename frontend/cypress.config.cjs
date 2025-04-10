@@ -39,6 +39,16 @@ function setupNodeEvents(on, config) {
     config.baseUrl = config.baseUrl || 'http://127.0.0.1:4173';
   }
 
+  // Tâche personnalisée pour log DOM dans CI
+  on('task', {
+    logDom(content) {
+      console.log('\n🧪 DOM Snapshot:\n');
+      console.log(content);
+      return null;
+    },
+  });
+
+
   try {
     codeCoverage(on, config);
   } catch (err) {
