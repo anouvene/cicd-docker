@@ -2,8 +2,8 @@
 name: CI/CD avec les images Docker et Docker Compose
 
 env:
-  SERVER_USER: 'root'
-  SERVER_IP: '151.80.59.182'
+  SERVER_PRODUCTION_USER: 'root'
+  SERVER_PRODUCION_IP: '151.80.59.182'
 
 concurrency: # Règle de gestion de la concurrence des jobs
   group: ${{ github.workflow }}-${{ github.ref }} # Regroupement des jobs par le nom du workflow et par la référence git (branche ou tag)
@@ -157,19 +157,25 @@ jobs:
           name: dom-snapshots
           path: frontend/cypress/debug/
   
-  deploy:
+  deploy-production:
       needs: ["e2e"]
       runs-on: ubuntu-latest
+
+      if: github.ref == 'refs/heads/main'
+      environment:
+        name: production
+        url: http//$SERVER_PRODUCION_IP
+
       steps:
-      - name: checkout le code
+      - name: Checkout le code
         uses: actions/checkout@v4
   
       - name: Déployer sur le serveur
         run: |
           eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.OVH_PROD_PKEY }}"
+          ssh-add - <<< "${{ secrets.VPS_KEY }}"
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts
-          scp -P 2704 docker-compose.prod.yml ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:/var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml
-          ssh -p 2704 ${{ env.SERVER_USER }}@${{ env.SERVER_IP }} "docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} &&
+          ssh-keyscan -H ${{ env.SERVER_PRODUCION_IP }} >> ~/.ssh/known_hosts
+          scp -P 2704 docker-compose.prod.yml ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCION_IP }}:/var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml
+          ssh -p 2704 ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCION_IP }} "docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} &&
             docker compose -f /var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml up -d --force-recreate"
