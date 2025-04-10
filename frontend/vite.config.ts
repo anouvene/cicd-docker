@@ -9,7 +9,7 @@ export default defineConfig({
       include: 'src/*',
       exclude: ['node_modules', 'test/'],
       extension: ['.js', '.ts', '.vue'],
-      forceBuildInstrument: process.env.RUN_ENV !== 'docker'
+      forceBuildInstrument: false
     }),
     vue({
       template: {
