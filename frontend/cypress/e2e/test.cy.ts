@@ -54,8 +54,10 @@ describe('Vue 3 App', () => {
     cy.url().should('include', '/profil');
     cy.contains('Déconnexion').should('exist');
 
+    // Débogage DOM pour voir si l'attribut data-cy="" existe
     cy.document().then(doc => {
       console.log('DOM:', doc.body.innerHTML);
+      cy.writeFile('cypress/debug/dom-before-logout.html', doc.documentElement.outerHTML);
     });
   
     // Attendre le logout s’il est rendu avec un délai
