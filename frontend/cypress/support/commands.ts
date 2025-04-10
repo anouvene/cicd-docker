@@ -28,9 +28,14 @@ Cypress.Commands.add('login', (email: string, password: string) => {
     if (runEnv === 'docker') {
       // 🔧 Mode Docker : pas de cy.session (pas fiable en CI)
       cy.visit('/connexion');
-      cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
-      cy.dataCy('password').type(password);
+
+    //   cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
+    //   cy.dataCy('password').type(password);
+
+      cy.get('[data-cy="email"]', { timeout: 15000 }).should('be.visible').type(email);
+      cy.get('[data-cy="password"]').type(password);
       cy.contains('button', 'Connexion').click();
+
       cy.url().should('include', '/profil');
       cy.contains('Déconnexion').should('exist');
     } else {
@@ -49,10 +54,10 @@ Cypress.Commands.add('login', (email: string, password: string) => {
             .its('cookie')
             .should('contain', 'token')
         }
-      });
-      cy.visit('/profil');
-      cy.wait(2000);
+      });  
     }
+
+    cy.visit('/profil');
   });
 
 //export {}
