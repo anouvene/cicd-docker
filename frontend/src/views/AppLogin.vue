@@ -43,12 +43,12 @@ const { value: passwordValue, errorMessage: passwordError } = useField('password
       <h2 class="mb-20">Connexion</h2>
       <div class="d-flex flex-column mb-10">
         <label for="email" class="mb-5">Email*</label>
-        <input data-cy="email" v-model="emailValue" id="email" type="text" />
+        <input :data-cy="'email'" v-model="emailValue" id="email" type="text" />
         <p v-if="emailError" class="form-error">{{ emailError }}</p>
       </div>
       <div class="d-flex flex-column mb-10">
         <label for="password" class="mb-5">Mot de passe</label>
-        <input data-cy="password" v-model="passwordValue" id="password" type="password" />
+        <input :data-cy="'password'" v-model="passwordValue" id="password" type="password" />
         <p v-if="passwordError" class="form-error">{{ passwordError }}</p>
       </div>
       <div>

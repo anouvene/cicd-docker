@@ -1,10 +1,8 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import istanbul from 'vite-plugin-istanbul';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     istanbul({
@@ -13,7 +11,15 @@ export default defineConfig({
       extension: ['.js', '.ts', '.vue'],
       forceBuildInstrument: true
     }),
-    vue()
+    vue({
+      template: {
+        compilerOptions: {
+          // Empêche Vue de transformer ou supprimer les attributs
+          nodeTransforms: [],
+          whitespace: 'preserve',
+        }
+      }
+    })
   ],
   resolve: {
     alias: {
