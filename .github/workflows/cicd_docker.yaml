@@ -162,35 +162,33 @@ jobs:
           path: frontend/cypress/debug/
   
   deploy-production:
-      needs: ["e2e"]
-      runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main'
+    name: Déploiement en Production
+    needs: ["e2e"]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-      environment:
-        name: production
-        url: http//$SERVER_PRODUCTION_IP
+    environment:
+      name: production
+      url: http://${{ env.SERVER_PRODUCTION_IP }}
 
-      steps:
-      - name: Checkout code
+    steps:
+      - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Vérification que le secret est chargé
-        run: echo "${{ secrets.VPS_KEY }}"
-
-      - name: Préparer SSH + Connexion
+      - name: Préparer la clé SSH
         run: |
-          eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.VPS_KEY }}"
+          echo "${{ secrets.VPS_KEY }}" > key.pem
+          chmod 600 key.pem
           mkdir -p ~/.ssh
           ssh-keyscan -p 2704 -H ${{ env.SERVER_PRODUCTION_IP }} >> ~/.ssh/known_hosts
 
-      - name: Copier docker-compose sur le serveur
+      - name: Copier docker-compose.prod.yml sur le serveur
         run: |
-          scp -P 2704 docker-compose.prod.yml ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCTION_IP }}:/var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml
+          scp -i key.pem -P 2704 docker-compose.prod.yml ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCTION_IP }}:/var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml
 
       - name: Déployer avec Docker Compose
         run: |
-          ssh -p 2704 ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCTION_IP }} "
+          ssh -i key.pem -p 2704 ${{ env.SERVER_PRODUCTION_USER }}@${{ env.SERVER_PRODUCTION_IP }} "
             set -euxo pipefail
             docker login ghcr.io -u '${{ github.actor }}' -p '${{ secrets.GITHUB_TOKEN }}'
             docker compose -f /var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml up -d --force-recreate
