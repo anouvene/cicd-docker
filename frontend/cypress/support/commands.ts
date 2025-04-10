@@ -19,21 +19,31 @@ Cypress.Commands.add('dataCy', (dataValue) => {
     return cy.get(`[data-cy="${dataValue}"]`);
 });
 
-// -- Login --
+/**
+ * Login avec sans session pour docker
+ */
 Cypress.Commands.add('login', (email: string, password: string) => {
-    cy.session([email, password], () => {
+    const runEnv = Cypress.env('RUN_ENV') || 'local';
+  
+    if (runEnv === 'docker') {
+      // 🔧 Mode Docker : pas de cy.session (pas fiable en CI)
+      cy.visit('/connexion');
+      cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
+      cy.dataCy('password').type(password);
+      cy.contains('button', 'Connexion').click();
+      cy.url().should('include', '/profil');
+      cy.contains('Déconnexion').should('exist');
+    } else {
+      // 💻 En local : session pour plus de vitesse
+      cy.session([email, password], () => {
         cy.visit('/connexion');
-
-        // Attend que le champ email soit bien là
-        cy.dataCy('email', { timeout: 15000 }).should('exist');
-        cy.dataCy('email').type(email);
+        cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
         cy.dataCy('password').type(password);
         cy.contains('button', 'Connexion').click();
-
         cy.url().should('include', '/profil');
-        cy.contains('Déconnexion').should('be.visible');
-    });
-});
-
+        cy.contains('Déconnexion').should('exist');
+      });
+    }
+  });
 
 //export {}
