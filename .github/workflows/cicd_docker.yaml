@@ -1,8 +1,15 @@
 # Nom du `workflow`
-name: Build et push des images Docker
+name: CI/CD avec les images Docker et Docker Compose
 
-# Événements déclenchant le `workflow`
-on:
+env:
+  SERVER_USER: 'root'
+  SERVER_IP: '151.80.59.182'
+
+concurrency: # Règle de gestion de la concurrence des jobs
+  group: ${{ github.workflow }}-${{ github.ref }} # Regroupement des jobs par le nom du workflow et par la référence git (branche ou tag)
+  cancel-in-progress: true # Règle qui annule les jobs en cours si un nouveau job est lancé
+
+on: # Événements déclenchant le `workflow`
   push:  # Déclenche le `workflow` lors d'un `push`
     branches:  # Filtrer les branches
       - main  # Exécute sur la branche `main`
@@ -31,6 +38,11 @@ jobs:
       run: npm audit --audit-level=moderate
     - name: vérifie le code
       run: npm run lint
+      
+    - name: Upload du rapport de couverture sur Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   tests_backend:
     runs-on: ubuntu-latest
@@ -144,3 +156,20 @@ jobs:
         with:
           name: dom-snapshots
           path: frontend/cypress/debug/
+  
+  deploy:
+      needs: ["e2e"]
+      runs-on: ubuntu-latest
+      steps:
+      - name: checkout le code
+        uses: actions/checkout@v4
+  
+      - name: Déployer sur le serveur
+        run: |
+          eval $(ssh-agent -s)
+          ssh-add - <<< "${{ secrets.OVH_PROD_PKEY }}"
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ env.SERVER_IP }} >> ~/.ssh/known_hosts
+          scp docker-compose.prod.yml ${{ env.SERVER_USER }}@${{ env.SERVER_IP }}:/var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml
+          ssh ${{ env.SERVER_USER }}@${{ env.SERVER_IP }} "docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} &&
+            docker compose -f /var/www/html/anouvene/realisations/cicd-docker/docker-compose.prod.yml up -d --force-recreate"
