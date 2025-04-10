@@ -5,7 +5,6 @@ const codeCoverage = require('@cypress/code-coverage/task');
 const runEnv = process.env.RUN_ENV || 'local';
 console.log(`🔧 Running Cypress in '${runEnv}' environment.`);
 
-
 const sharedConfig = {
   supportFile: 'cypress/support/e2e.ts',
   specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
@@ -54,4 +53,7 @@ module.exports = defineConfig({
     ...(configByEnv[runEnv] || configByEnv.local),
     setupNodeEvents,
   },
+  env: {
+    CYPRESS_VERBOSE: true
+  }
 });
