@@ -24,4 +24,4 @@ services:
       - frontend
       - node-api
     entrypoint: >
-      sh -c "npx cypress run --headless --browser chrome --config-file /frontend/cypress.config.cjs"
+      sh -c "npx cypress run --headless --browser chrome --env RUN_ENV=docker --config-file /frontend/cypress.config.cjs"
