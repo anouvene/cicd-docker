@@ -46,12 +46,12 @@ describe('Vue 3 App', () => {
 
   //context('Login', () => {
     it('La connexion fonctionne', () => {
-      cy.contains('Connexion').click();
-      cy.get('#email').type('test@test.fr');
-      cy.get('#password').type('riuehuhrfezhop');
-      cy.get('button').contains('Connexion').click();
+      // cy.contains('Connexion').click();
+      // cy.get('#email').type('test@test.fr');
+      // cy.get('#password').type('riuehuhrfezhop');
+      // cy.get('button').contains('Connexion').click();
 
-      //cy.login('test@test.fr', 'riuehuhrfezhop');
+      cy.login('test@test.fr', 'riuehuhrfezhop');
       cy.contains('Mon profil');
       cy.contains('Déconnexion');
     });

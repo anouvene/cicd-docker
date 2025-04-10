@@ -13,6 +13,14 @@
 
 // -- Login --
 Cypress.Commands.add('login', (email: string, password: string) => {
+    /**
+     * Select DOM element by data-cy attribute.
+     * @example cy.dataCy('greeting')
+     */
+    Cypress.Commands.add('dataCy', (dataValue) => {
+        return cy.get(`[data-cy=${dataValue}]`);
+    });
+
     cy.getCookie('token').then((cookie) => {
         if (!cookie) {
             cy.clearCookies();
@@ -48,13 +56,6 @@ Cypress.Commands.add('login', (email: string, password: string) => {
     });
 });
 
-/**
- * Select DOM element by data-cy attribute.
- * @example cy.dataCy('greeting')
- */
-Cypress.Commands.add('dataCy', (dataValue) => {
-    return cy.get(`[data-cy=${dataValue}]`);
-});
 //
 //
 // -- This is a child command --
