@@ -46,6 +46,7 @@ describe('Vue 3 App', () => {
 
   //context('Login', () => {
     it('La connexion fonctionne', () => {
+      cy.wait(5000);
       // cy.contains('Connexion').click();
       // cy.get('#email').type('test@test.fr');
       // cy.get('#password').type('riuehuhrfezhop');
@@ -59,6 +60,7 @@ describe('Vue 3 App', () => {
 
   //context('Logout', () => {
     it('La déconnexion fonctionne', () => {
+      cy.wait(1000);
       cy.login('test@test.fr', 'riuehuhrfezhop');
       cy.url().should('include', '/profil');
       cy.dataCy('logout').click();
