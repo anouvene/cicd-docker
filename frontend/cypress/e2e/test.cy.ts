@@ -53,6 +53,10 @@ describe('Vue 3 App', () => {
     // S’assurer qu’on est bien loggé
     cy.url().should('include', '/profil');
     cy.contains('Déconnexion').should('exist');
+
+    cy.document().then(doc => {
+      console.log('DOM:', doc.body.innerHTML);
+    });
   
     // Attendre le logout s’il est rendu avec un délai
     cy.dataCy('logout', { timeout: 15000 }).should('be.visible').click();
@@ -60,5 +64,5 @@ describe('Vue 3 App', () => {
     // Vérifier qu'on revient à la page de connexion
     cy.contains('h2', 'Connexion').should('be.visible');
   });
-  
+
 });
