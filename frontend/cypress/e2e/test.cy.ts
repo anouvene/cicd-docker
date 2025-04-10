@@ -20,7 +20,7 @@ describe('Vue 3 App', () => {
 
   it('Visite la page de login', () => {
     cy.contains('Connexion').click();
-    
+
     cy.contains('h2', 'Connexion');
   });
 
@@ -49,8 +49,16 @@ describe('Vue 3 App', () => {
 
   it('La déconnexion fonctionne', () => {
     cy.login('test@test.fr', 'riuehuhrfezhop');
-    cy.dataCy('logout').click();
-
+  
+    // S’assurer qu’on est bien loggé
+    cy.url().should('include', '/profil');
+    cy.contains('Déconnexion').should('exist');
+  
+    // Attendre le logout s’il est rendu avec un délai
+    cy.dataCy('logout', { timeout: 15000 }).should('be.visible').click();
+  
+    // Vérifier qu'on revient à la page de connexion
     cy.contains('h2', 'Connexion').should('be.visible');
   });
+  
 });
