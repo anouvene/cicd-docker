@@ -5,6 +5,8 @@ describe('Vue 3 App', () => {
   const apiBaseUrl = runEnv === 'docker'
     ? 'http://node-api' // <- plus de :3000 ici
     : 'http://localhost:3000';
+  
+  console.log('🌍 Cypress env =', runEnv);
 
   before(() => {
     cy.request({
