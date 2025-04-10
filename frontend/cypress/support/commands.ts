@@ -16,7 +16,7 @@
  * @example cy.dataCy('greeting')
  */
 Cypress.Commands.add('dataCy', (dataValue) => {
-    return cy.get(`[data-cy=${dataValue}]`);
+    return cy.get(`[data-cy="${dataValue}"]`);
 });
 
 // -- Login --

@@ -5,24 +5,29 @@ const codeCoverage = require('@cypress/code-coverage/task');
 const runEnv = process.env.RUN_ENV || 'local';
 console.log(`🔧 Running Cypress in '${runEnv}' environment.`);
 
+
+const sharedConfig = {
+  supportFile: 'cypress/support/e2e.ts',
+  specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
+  defaultCommandTimeout: 10000,
+  pageLoadTimeout: 60000,
+  responseTimeout: 60000,
+};
+
 const configByEnv = {
   local: {
-    supportFile: 'cypress/support/e2e.ts',
-    specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
+    ...sharedConfig,
     baseUrl: 'http://127.0.0.1:4173',
-    defaultCommandTimeout: 10000,
-    pageLoadTimeout: 60000,
-    responseTimeout: 60000,
     chromeWebSecurity: true,
     video: true,
   },
   docker: {
-    supportFile: 'cypress/support/e2e.ts',
-    specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
-    video: false,
+    ...sharedConfig,
     chromeWebSecurity: false,
+    video: false,
   },
 };
+
 
 function setupNodeEvents(on, config) {
   const runEnvFromCypress = config.env.RUN_ENV || process.env.RUN_ENV || 'local';
