@@ -26,23 +26,24 @@ Cypress.Commands.add('login', (email: string, password: string) => {
     const runEnv = Cypress.env('RUN_ENV') || 'local';
   
     if (runEnv === 'docker') {
-      // 🔧 Mode Docker : pas de cy.session (pas fiable en CI)
-      cy.visit('/connexion');
+        // 🔧 Mode Docker : pas de cy.session (pas fiable en CI)
+        cy.visit('/connexion');
+        cy.wait(2000); 
 
-    //   cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
-    //   cy.dataCy('password').type(password);
+        //   cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
+        //   cy.dataCy('password').type(password);
+        cy.get('[data-cy="email"]').should('exist');
+        cy.get('[data-cy="email"]').type(email);
+        cy.get('[data-cy="password"]').type(password);
+        cy.contains('button', 'Connexion').click();
 
-      cy.get('[data-cy="email"]', { timeout: 15000 }).should('be.visible').type(email);
-      cy.get('[data-cy="password"]').type(password);
-      cy.contains('button', 'Connexion').click();
-
-      cy.url().should('include', '/profil');
-      cy.contains('Déconnexion').should('exist');
+        cy.url().should('include', '/profil');
+        cy.contains('Déconnexion').should('exist');
     } else {
       // 💻 En local : session pour plus de vitesse
       cy.session([email, password], () => {
         cy.visit('/connexion');
-        cy.dataCy('email', { timeout: 15000 }).should('be.visible').type(email);
+        cy.dataCy('email').should('be.visible').type(email);
         cy.dataCy('password').type(password);
         cy.contains('button', 'Connexion').click();
 

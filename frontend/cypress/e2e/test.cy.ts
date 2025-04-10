@@ -20,11 +20,13 @@ describe('Vue 3 App', () => {
 
   it('Visite la page de login', () => {
     cy.contains('Connexion').click();
+    
     cy.contains('h2', 'Connexion');
   });
 
   it('Visite la page de register', () => {
     cy.contains('Inscription').click();
+
     cy.contains('h2', 'Inscription');
   });
 
@@ -34,12 +36,13 @@ describe('Vue 3 App', () => {
     cy.get('#email').type('test@test.fr');
     cy.get('#password').type('riuehuhrfezhop');
     cy.get('button').contains('Inscription').click();
+
     cy.contains('h2', 'Connexion');
   });
 
   it('La connexion fonctionne', () => {
     cy.login('test@test.fr', 'riuehuhrfezhop');
-    
+
     cy.contains('Mon profil');
     cy.contains('Déconnexion');
   });
