@@ -11,22 +11,23 @@
 //
 //
 
+/**
+ * Select DOM element by data-cy attribute.
+ * @example cy.dataCy('greeting')
+ */
+Cypress.Commands.add('dataCy', (dataValue) => {
+    return cy.get(`[data-cy=${dataValue}]`);
+});
+
 // -- Login --
 Cypress.Commands.add('login', (email: string, password: string) => {
-    /**
-     * Select DOM element by data-cy attribute.
-     * @example cy.dataCy('greeting')
-     */
-    Cypress.Commands.add('dataCy', (dataValue) => {
-        return cy.get(`[data-cy=${dataValue}]`);
-    });
-
     cy.getCookie('token').then((cookie) => {
         if (!cookie) {
             cy.clearCookies();
             cy.clearAllSessionStorage();
-            cy.session([email, password], () => {
+            cy.session([email, password], () => {           
                 cy.visit('/connexion');
+                cy.dataCy('email', { timeout: 10000}).should('exist');
                 cy.dataCy('email').type(email);
                 cy.dataCy('password').type(password);
                 cy.contains('button', 'Connexion').click();

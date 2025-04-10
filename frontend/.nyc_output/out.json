@@ -1,6 +1,6 @@
 {
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/auth.service.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/auth.service.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/auth.service.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/auth.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -172,16 +172,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/auth.service.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/auth.service.ts"
       ],
       "mappings": "AAEA,MAAM,WAAW;AAEjB,sBAAsB,MAAM,WAAqC;AAC/D,QAAM,WAAW,MAAM,MAAM,UAAU;AAAA,IACrC,QAAQ;AAAA,IACR,MAAM,KAAK,UAAU,SAAS;AAAA,IAC9B,SAAS;AAAA,MACP,gBAAgB;AAAA,IAClB;AAAA,EACF,CAAC;AACD,MAAI,SAAS,IAAI;AACf,WAAO,MAAM,SAAS,KAAK;AAAA,EAC7B,OAAO;AACL,UAAM,MAAM,SAAS,KAAK;AAAA,EAC5B;AACF;AAEA,sBAAsB,SAAS;AAC7B,QAAM,MAAM,UAAU;AAAA,IACpB,QAAQ;AAAA,EACV,CAAC;AACH;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "79ebb182922b9189b2e14c6fb341feb8638a3224"
+    "hash": "d0100b4fa4a0666fbe51cd7dc29d3e2810a29494"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/user.service.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/user.service.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/user.service.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/user.service.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -353,16 +353,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/user.service.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/user.service.ts"
       ],
       "mappings": "AAEA,MAAM,WAAW;AAEjB,sBAAsB,WAAW,UAAyB;AACxD,QAAM,WAAW,MAAM,MAAM,UAAU;AAAA,IACrC,QAAQ;AAAA,IACR,MAAM,KAAK,UAAU,QAAQ;AAAA,IAC7B,SAAS;AAAA,MACP,gBAAgB;AAAA,IAClB;AAAA,EACF,CAAC;AACD,MAAI,SAAS,IAAI;AACf,WAAO,SAAS,KAAK;AAAA,EACvB,OAAO;AACL,UAAM,MAAM,SAAS,KAAK;AAAA,EAC5B;AACF;AAEA,sBAAsB,mBAAyC;AAC7D,SAAO,OAAO,MAAM,MAAM,GAAG,QAAQ,UAAU,GAAG,KAAK;AACzD;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "31f278cd5ff99e2acd4df082dd58ac3bd00c2997"
+    "hash": "f81eb099341eb742e7e4bd585283c14c36131898"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/index.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/index.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/index.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/index.ts",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -372,16 +372,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/services/index.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/services/index.ts"
       ],
       "mappings": "AAAA,cAAc;AACd,cAAc;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "857b79bc16d645296a338dbb72b95c1d446eb7c9"
+    "hash": "571c7549c2f354f96e923967364dc1e23e152cb2"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/userStore.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/userStore.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/userStore.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/userStore.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -774,16 +774,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/userStore.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/userStore.ts"
       ],
       "mappings": "AAAA,SAAS,mBAAmB;AAE5B,SAAS,kBAAkB,OAAO,cAAc;AAOzC,aAAM,UAAU,YAAY,QAAQ;AAAA,EACzC,OAAO,OAAkB;AAAA,IACvB,aAAa;AAAA,IACb,QAAQ;AAAA,EACV;AAAA,EACA,SAAS;AAAA,IACP,gBAAgB,OAAuB;AACrC,UAAI,MAAM,aAAa;AACrB,eAAO;AAAA,MACT,WAAW,CAAC,MAAM,eAAe,MAAM,QAAQ;AAC7C,eAAO;AAAA,MACT,OAAO;AACL,eAAO;AAAA,MACT;AAAA,IACF;AAAA,EACF;AAAA,EACA,SAAS;AAAA,IACP,MAAM,MAAM,WAAsB;AAChC,WAAK,cAAc,MAAM,MAAM,SAAS;AAAA,IAC1C;AAAA,IACA,MAAM,SAAS;AACb,YAAM,OAAO;AACb,WAAK,cAAc;AAAA,IACrB;AAAA,IACA,MAAM,mBAAmB;AACvB,WAAK,cAAc,MAAM,iBAAiB;AAC1C,WAAK,SAAS;AAAA,IAChB;AAAA,EACF;AACF,CAAC;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "8b5d68bdae78a60d64b0ef59d9247af81819e688"
+    "hash": "c63cd95166b912e39433ab59a1f94b84dd2a2069"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/index.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/index.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/index.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/index.ts",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -793,16 +793,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/stores/index.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/stores/index.ts"
       ],
       "mappings": "AAAA,cAAc;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ec249e4d7be8b26b02357659fb1344983c6311b6"
+    "hash": "1bc51aaac71f778bb98ca335164c748e3692c97a"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/auth.guards.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/auth.guards.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/auth.guards.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/auth.guards.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1002,16 +1002,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/auth.guards.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/auth.guards.ts"
       ],
       "mappings": "AAAA,SAAS,eAAe;AAEjB,gBAAS,uBAAuB;AACrC,QAAM,YAAY,QAAQ;AAC1B,MAAI,CAAC,UAAU,iBAAiB;AAC9B,WAAO;AAAA,EACT;AACF;AAEO,gBAAS,0BAA0B;AACxC,QAAM,YAAY,QAAQ;AAC1B,MAAI,UAAU,iBAAiB;AAC7B,WAAO;AAAA,EACT;AACF;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "acf9c5b6d90d17b115b2928bd8b380dfbf19065b"
+    "hash": "5e5e37392a0c5b6d6c3599920f98f4fbe11d512b"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/index.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/index.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/index.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/index.ts",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -1021,16 +1021,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/shared/guards/index.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/shared/guards/index.ts"
       ],
       "mappings": "AAAA,cAAc;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d7ebc9b695af0c5e857c8379ce4da881a84da9d7"
+    "hash": "be53967c2622e482b9fd251dd05a0c859cf2a1a4"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/router.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/router.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/router.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/router.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -1340,16 +1340,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/router.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/router.ts"
       ],
       "mappings": "AAAA,SAAS,cAAc,wBAAwB;AAC/C,SAAS,sBAAsB,+BAA+B;AAC9D,SAAS,eAAe;AAEjB,aAAM,SAAS,aAAa;AAAA,EACjC,SAAS,iBAAiB;AAAA,EAC1B,QAAQ;AAAA,IACN;AAAA,MACE,MAAM;AAAA,MACN,WAAW,MAAM,OAAO,qBAAqB;AAAA,IAC/C;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,aAAa,CAAC,uBAAuB;AAAA,MACrC,WAAW,MAAM,OAAO,sBAAsB;AAAA,IAChD;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,aAAa,CAAC,uBAAuB;AAAA,MACrC,WAAW,MAAM,OAAO,uBAAuB;AAAA,IACjD;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,aAAa,CAAC,oBAAoB;AAAA,MAClC,WAAW,MAAM,OAAO,wBAAwB;AAAA,IAClD;AAAA,IACA;AAAA,MACE,MAAM;AAAA,MACN,WAAW,MAAM,OAAO,yBAAyB;AAAA,IACnD;AAAA,EACF;AACF,CAAC;AAED,OAAO,WAAW,YAAY;AAC5B,QAAM,YAAY,QAAQ;AAC1B,MAAI,CAAC,UAAU,QAAQ;AACrB,UAAM,UAAU,iBAAiB;AAAA,EACnC;AACF,CAAC;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "e92741ee317bcd5120a638c756fc778006acc435"
+    "hash": "d8b42c31c8001783c99a60948f4a840ea3f3c5ef"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/components/AppHeader.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/components/AppHeader.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/components/AppHeader.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/components/AppHeader.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -2230,7 +2230,7 @@
       "10": 9,
       "11": 20,
       "12": 20,
-      "13": 17,
+      "13": 18,
       "14": 6,
       "15": 1,
       "16": 12,
@@ -2250,7 +2250,7 @@
     "f": {
       "0": 9,
       "1": 20,
-      "2": 17,
+      "2": 18,
       "3": 6,
       "4": 1,
       "5": 12,
@@ -2260,7 +2260,7 @@
     },
     "b": {
       "0": [
-        17,
+        18,
         9
       ],
       "1": [
@@ -2306,15 +2306,15 @@
       "names": [],
       "ignoreList": [],
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/components/AppHeader.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/components/AppHeader.vue"
       ],
-      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/components/AppHeader.vue"
+      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/components/AppHeader.vue"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "826f98eeb5404ac2e9fd2df00b828cedc4483ca8"
+    "hash": "1aa267b7b007449ae997b81ce47ade3bd7847e7e"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/App.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/App.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/App.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/App.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -2825,15 +2825,15 @@
       "names": [],
       "ignoreList": [],
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/App.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/App.vue"
       ],
-      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/App.vue"
+      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/App.vue"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "e5133a11d81e0cf35053076b480058a3fdaf6567"
+    "hash": "368426bfb70fac6b39c40250c8982cfec21d70f8"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/main.ts": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/main.ts",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/main.ts": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/main.ts",
     "statementMap": {
       "0": {
         "start": {
@@ -2889,16 +2889,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/main.ts"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/main.ts"
       ],
       "mappings": "AAAA,SAAS,iBAAiB;AAC1B,SAAS,mBAAmB;AAC5B,SAAS,cAAc;AACvB,OAAO,SAAS;AAEhB,MAAM,MAAM,UAAU,GAAG;AACzB,IAAI,IAAI,YAAY,CAAC;AACrB,IAAI,IAAI,MAAM;AACd,IAAI,MAAM,MAAM;",
       "names": []
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ea990739b2da9e6083390e45561b89fa9d34a9d7"
+    "hash": "6986741bfc4124b1deed71bb530a9ad00b479ea7"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppHome.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppHome.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppHome.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppHome.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -3210,13 +3210,13 @@
       }
     },
     "s": {
-      "0": 5,
-      "1": 5,
-      "2": 5,
-      "3": 5,
-      "4": 5,
+      "0": 6,
+      "1": 6,
+      "2": 6,
+      "3": 6,
+      "4": 6,
       "5": 0,
-      "6": 5,
+      "6": 6,
       "7": 0,
       "8": 0,
       "9": 0,
@@ -3225,14 +3225,14 @@
       "12": 0
     },
     "f": {
-      "0": 5,
+      "0": 6,
       "1": 0,
       "2": 0
     },
     "b": {
       "0": [
-        5,
-        5
+        6,
+        6
       ],
       "1": [
         0,
@@ -3246,16 +3246,16 @@
     "inputSourceMap": {
       "version": 3,
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppHome.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppHome.vue"
       ],
       "names": [],
       "mappings": ";;;wBAGE,oBAAa,YAAT,MAAI"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "1f4be743648be57d36e748f2cbfbc975a2a2aa2f"
+    "hash": "b3274bd3938a3725caac3ed8d14b20c984388fd4"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppLogin.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppLogin.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppLogin.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppLogin.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -4384,15 +4384,15 @@
       "names": [],
       "ignoreList": [],
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppLogin.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppLogin.vue"
       ],
-      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppLogin.vue"
+      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppLogin.vue"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "6f16568443a4534270e564e5f86879d2522c5ce7"
+    "hash": "4a9cdeff37a152c7845e32fd77be0f968df367c6"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppSignup.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppSignup.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppSignup.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppSignup.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -5699,15 +5699,15 @@
       "names": [],
       "ignoreList": [],
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppSignup.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppSignup.vue"
       ],
-      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppSignup.vue"
+      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppSignup.vue"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "ab81cb4136d4030c65050d14449c214702e42817"
+    "hash": "f607b7ad70c076068549556a450377ac8069267d"
   },
-  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppProfile.vue": {
-    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppProfile.vue",
+  "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppProfile.vue": {
+    "path": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppProfile.vue",
     "statementMap": {
       "0": {
         "start": {
@@ -6160,11 +6160,11 @@
       "names": [],
       "ignoreList": [],
       "sources": [
-        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppProfile.vue"
+        "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppProfile.vue"
       ],
-      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-projet3/client/src/views/AppProfile.vue"
+      "file": "/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppProfile.vue"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b3930b4ce6952078261876a42492190d9e4475b2"
+    "hash": "5f7c259a65bff8b0ae6dcebc1771d54c1815ba3f"
   }
 }
