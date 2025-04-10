@@ -18,7 +18,7 @@ const configByEnv = {
   },
   docker: {
     baseUrl: 'http://frontend',
-    supportFile: false, // you can remove or adjust this
+    supportFile: 'cypress/support/e2e.ts',// you can remove or adjust this
     specPattern: 'cypress/e2e/**/*.{cy,spec}.{js,jsx,ts,tsx}',
     video: false,
     chromeWebSecurity: false,
