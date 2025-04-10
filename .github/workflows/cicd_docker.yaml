@@ -142,4 +142,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dom-snapshots
-          path: frontend/cypress/debug/*.html
+          path: frontend/cypress/debug/
