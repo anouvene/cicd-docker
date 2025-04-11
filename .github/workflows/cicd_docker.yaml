@@ -83,6 +83,7 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   build-frontend-and-node-api:  # Nom du job
+    name: Build & Push Docker Images
     needs: [tests_frontend, tests_backend]
     runs-on: ubuntu-latest  # S'exécute sur la dernière version d'Ubuntu
     permissions:  # Permissions nécessaires
@@ -117,12 +118,15 @@ jobs:
         uses: docker/metadata-action@v5  # Utilise l'action de métadonnées
         with:
           images: ${{ matrix.full_image_name }}  # Utilise le nom complet de l'image depuis la matrice
+          tags: |
+            type=raw,value=latest
 
       - name: Build et push  # Construit et pousse l'image
         uses: docker/build-push-action@v5  # Utilise l'action de build et push Docker
         with:  # Avec ces paramètres
           push: true  # Pousse l'image
-          tags: ${{ matrix.full_image_name }}:latest  # Tags pour l'image
+          tags: ${{ steps.metadata.outputs.tags }}  # Tags pour l'image
+          labels: ${{ steps.metadata.outputs.labels }}
           context: ./${{ matrix.path }}  # Contexte pour la construction Docker
           cache-from: type=gha  # Utilise le cache GitHub Actions
           cache-to: type=gha,mode=max  # Enregistre le cache pour les utilisations futures
