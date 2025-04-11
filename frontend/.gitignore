@@ -14,10 +14,10 @@ dist-ssr
 coverage
 *.local
 
-/cypress/videos/
-/cypress/screenshots/
-/cypress/debug/
-frontend/.nyc_output/
+cypress/videos/
+cypress/screenshots/
+.nyc_output/
+cypress/debug/
 
 
 # Editor directories and files

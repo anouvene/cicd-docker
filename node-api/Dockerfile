@@ -1,15 +1,14 @@
 FROM node:lts-bullseye
 
 WORKDIR /usr/src/app
-
 COPY package*.json ./
 
 # Ajouter ARG pour NODE_ENV
-ARG NODE_ENV=production
+ARG NODE_ENV=docker
 ENV NODE_ENV=$NODE_ENV
 
 # Installer les dépendances dynamiquement
-RUN if [ "$NODE_ENV" = "production" ]; then \
+RUN if [ "$NODE_ENV" = "docker" ]; then \
       npm install --omit=dev; \
     else \
       npm install; \
