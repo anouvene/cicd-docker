@@ -15,7 +15,7 @@ services:
         condition: on-failure # redémarrage du conteneur en casd d'échec
 
   frontend:
-    image: ghcr.io/anouvene/cicd-dockerfrontend:latest
+    image: ghcr.io/anouvene/cicd-docker/frontend:latest
     pull_policy: always
     ports:
       - target: 80      # port du conteneur sur lequel le service écoute
