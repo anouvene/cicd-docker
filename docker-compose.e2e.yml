@@ -1,14 +1,22 @@
-#version: '3.9'
+version: "3.9"
+
 services:
   node-api:
-    image: ghcr.io/anouvene/cicd-docker/node-api:latest
+    build:
+      context: ./node-api
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: test
+    environment:
+      - NODE_ENV=test
     ports:
       - '3000:80'
+
   frontend:
     image: ghcr.io/anouvene/cicd-docker/frontend:latest
     ports:
       - '80:80'
-  
+
   cypress:
     build:
       context: .
@@ -25,4 +33,3 @@ services:
       - node-api
     entrypoint: >
       sh -c "npx cypress run --headless --browser chrome --env RUN_ENV=docker --config-file /frontend/cypress.config.cjs"
-      entrypoint: >

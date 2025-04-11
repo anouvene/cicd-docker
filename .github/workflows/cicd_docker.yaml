@@ -146,7 +146,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Lancement des tests E2E
-        run: docker compose up --exit-code-from cypress --abort-on-container-exit
+        run: docker compose -f docker-compose.e2e.yml up --exit-code-from cypress --abort-on-container-exit
 
       - name: Nettoyage
         run: docker compose down -v --remove-orphans
