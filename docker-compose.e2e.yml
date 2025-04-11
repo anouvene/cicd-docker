@@ -1,21 +1,16 @@
-version: "3.9"
-
 services:
   node-api:
     build:
       context: ./node-api
       dockerfile: Dockerfile
       args:
-        NODE_ENV: local
+        NODE_ENV: test
     environment:
-      - NODE_ENV=local
-    ports:
-      - '3000:80'
+      - NODE_ENV=test
 
   frontend:
     image: ghcr.io/anouvene/cicd-docker/frontend:latest
-    ports:
-      - '80:80'
+    platform: linux/amd64
 
   cypress:
     build:
@@ -32,4 +27,4 @@ services:
       - frontend
       - node-api
     entrypoint: >
-      sh -c "npx cypress run --headless --browser chrome --env RUN_ENV=docker --config-file /frontend/cypress.config.cjs"
+      sh -c "npx cypress run --headless --browser electron --env RUN_ENV=docker --config-file /frontend/cypress.config.cjs"

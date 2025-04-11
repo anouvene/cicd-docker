@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 let mongo;
 
 beforeAll(async () => {
-  mongo = await MongoMemoryServer.create();
+  mongo = await MongoMemoryServer.create({
+    binary: {
+      version: '4.4.24', // ✅ Version compatible ARM + x86
+    },
+  });
   const uri = mongo.getUri();
   await mongoose.connect(uri);
 });

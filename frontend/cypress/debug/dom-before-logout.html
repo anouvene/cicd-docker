@@ -1,4 +1,6 @@
 <html lang="en"><head> <script type="text/javascript"> (()=>{"use strict";const e=window.Cypress=parent.Cypress;if(!e)throw new Error("Something went terribly wrong and we cannot proceed. We expected to find the global Cypress in the parent window but it is missing. This should never happen and likely is a bug. Please open an issue.");const t=(()=>{let e,t,n,r;const i=()=>{e=!1,t=!1,n=[],r={}},o=(e,t=[])=>"function"==typeof e?e.apply(window,t):window.eval(e);return i(),{wrap:()=>{const i={setTimeout:window.setTimeout,setInterval:window.setInterval,requestAnimationFrame:window.requestAnimationFrame,clearTimeout:window.clearTimeout,clearInterval:window.clearInterval},a=(e,t)=>i[e].apply(window,t),s=e=>n=>(t&&(r[n]=!0),a(e,[n])),w=t=>(...r)=>{let i,[s,w,...p]=r;return i=a(t,[(...r)=>{if(!e)return o(s,r);n.push({timerId:i,fnOrCode:s,params:r,type:t})},w,...p]),i};window.setTimeout=w("setTimeout"),window.setInterval=w("setInterval"),window.requestAnimationFrame=w("requestAnimationFrame"),window.clearTimeout=s("clearTimeout"),window.clearInterval=s("clearInterval")},reset:i,pause:a=>{e=Boolean(a),e||(t=!0,n.forEach((e=>{const{timerId:t,type:n,fnOrCode:i,params:a}=e;"setInterval"===n&&r[t]||o(i,a)})),i())}}})();e.removeAllListeners("app:timers:reset"),e.removeAllListeners("app:timers:pause"),e.on("app:timers:reset",t.reset),e.on("app:timers:pause",t.pause),t.wrap(),e.action("app:window:before:load",window)})(); </script>
+  <script type="module" src="/@vite/client"></script>
+
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,16 +8,182 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet">
   <title>Vite App</title>
-  <script type="module" crossorigin="" src="/assets/index-63aNADlM.js"></script>
-  <link rel="stylesheet" crossorigin="" href="/assets/index-CA0l_Cea.css">
-<link rel="modulepreload" as="script" crossorigin="" href="/assets/AppProfile-hU7QYll-.js"><link rel="stylesheet" crossorigin="" href="/assets/AppProfile-DZ4yzeE5.css"></head>
+<style type="text/css" data-vite-dev-id="/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/components/AppHeader.vue?vue&amp;type=style&amp;index=0&amp;scoped=48a13218&amp;lang.scss">.header-container[data-v-48a13218] {
+  background-color: var(--primary-1);
+}
+.header-container a[data-v-48a13218],
+.header-container li[data-v-48a13218] {
+  color: white;
+  cursor: pointer;
+}</style><style type="text/css" data-vite-dev-id="/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/App.vue?vue&amp;type=style&amp;index=0&amp;lang.scss">:root {
+  --primary-1: #e67e22;
+  --primary-2: #d35400;
+  --danger-1: #e74c3c;
+  --danger-2: #c0392b;
+  --success-1: #2ecc71;
+  --success-2: #27ae60;
+  --gray-1: #f6f6f6;
+  --gray-2: #ddd;
+  --gray-3: #34495e;
+  --text-color: #444;
+  --text-primary-color: #ffffff;
+  --border: 1px solid var(--gray-2);
+  --border-radius: 4px;
+  --font-family: "Roboto", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--gray-1);
+}
+input,
+textarea,
+select {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 8px 15px;
+}
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-3);
+}
+.form-error {
+  color: var(--danger-1);
+  font-size: 14px;
+  font-weight: 500;
+}
+.d-flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-start {
+  align-items: flex-start;
+}
+.flex-fill {
+  flex: 1 1 auto;
+}
+.p-10 {
+  padding: 10px;
+}
+.p-20 {
+  padding: 20px;
+}
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.p-30 {
+  padding: 30px;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}
+.m-10 {
+  margin: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.m-20 {
+  margin: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.m-30 {
+  margin: 30px;
+}
+.btn {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.btn-primary {
+  background-color: var(--primary-1);
+  color: var(--text-primary-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-2);
+}
+.btn-danger {
+  background-color: var(--danger-1);
+  color: var(--text-primary-color);
+}
+.btn-danger:hover {
+  background-color: var(--danger-2);
+}
+.btn-success {
+  background-color: var(--success-1);
+  color: var(--text-primary-color);
+}
+.btn-success:hover {
+  background-color: var(--success-2);
+}
+.card {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: white;
+  padding: 10px;
+}
+.app-container {
+  min-height: 100vh;
+}</style><style type="text/css" data-vite-dev-id="/Users/anouvene/Documents/DYMA/DEVOPS/Github-actions/Demos/cicd-docker/frontend/src/views/AppProfile.vue?vue&amp;type=style&amp;index=0&amp;scoped=9b6e0b42&amp;lang.scss">.card[data-v-9b6e0b42] {
+  width: 100%;
+  max-width: 300px;
+}</style></head>
 
 <body>
-  <div id="app" data-v-app=""><div class="d-flex flex-column app-container"><nav data-v-22283b36="" class="header-container d-flex flex-row align-items px-20"><div data-v-22283b36="" class="flex-fill d-flex flex-row align-items-center"><a data-v-22283b36="" href="/" class=""><h1 data-v-22283b36="">Application</h1></a></div><ul data-v-22283b36="" class="d-flex flex-row align-items-center"><li data-v-22283b36="" class="mr-20"><a data-v-22283b36="" href="/profil" class="router-link-active router-link-exact-active" aria-current="page">Mon profil</a></li><li data-v-22283b36="" data-cy="logout">Déconnexion</li></ul></nav><div data-v-c53a3b14="" class="d-flex flex-row align-items-center justify-content-center flex-fill"><div data-v-c53a3b14="" class="card"><pre data-v-c53a3b14="">{
-  "_id": "67f799721c42835f485342c7",
+  <div id="app" data-v-app=""><div class="d-flex flex-column app-container"><nav data-v-48a13218="" class="header-container d-flex flex-row align-items px-20"><div data-v-48a13218="" class="flex-fill d-flex flex-row align-items-center"><a data-v-48a13218="" href="/" class=""><h1 data-v-48a13218="">Application</h1></a></div> <ul data-v-48a13218="" class="d-flex flex-row align-items-center"><li data-v-48a13218="" class="mr-20"><a data-v-48a13218="" href="/profil" class="router-link-active router-link-exact-active" aria-current="page">Mon profil</a></li> <li data-v-48a13218="">Déconnexion</li></ul></nav> <div data-v-9b6e0b42="" class="d-flex flex-row align-items-center justify-content-center flex-fill"><div data-v-9b6e0b42="" class="card"><pre data-v-9b6e0b42="">{
+  "_id": "67f8a448dac912dc9ffc6f84",
   "name": "test",
   "email": "test@test.fr"
 }</pre></div></div></div></div>
+  <script type="module" src="/src/main.ts"></script>
 
 
 </body></html>
