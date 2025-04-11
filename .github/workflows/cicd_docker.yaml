@@ -6,7 +6,7 @@ permissions:
   packages: write
 
 env:
-  SERVER_PRODUCTION_USER: 'root'
+  SERVER_PRODUCTION_USER: 'anouvene'
   SERVER_PRODUCTION_IP: '151.80.59.182'
 
 concurrency: # Règle de gestion de la concurrence des jobs
