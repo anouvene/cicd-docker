@@ -6,9 +6,9 @@ services:
       context: ./node-api
       dockerfile: Dockerfile
       args:
-        NODE_ENV: test
+        NODE_ENV: local
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=local
     ports:
       - '3000:80'
 

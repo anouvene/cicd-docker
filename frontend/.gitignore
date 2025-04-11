@@ -16,7 +16,9 @@ coverage
 
 /cypress/videos/
 /cypress/screenshots/
+/cypress/debug/
 frontend/.nyc_output/
+
 
 # Editor directories and files
 .vscode/*
